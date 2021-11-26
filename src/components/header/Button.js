@@ -15,10 +15,11 @@ const BlackButton = styled(WhiteButton)`
 background-color: black;
 border: 1px solid black;
 color: white;
+margin-left: 16px;
 
 `;
 
-function HeaderButton(props) {
+function Button(props) {
     return props.primary ? (
         <WhiteButton>
             {props.text}
@@ -29,4 +30,4 @@ function HeaderButton(props) {
         </BlackButton>
     )
 }
-export default HeaderButton;
+export default Button;

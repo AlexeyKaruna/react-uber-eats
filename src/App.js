@@ -1,13 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import HeaderButton from './components/HeaderButton' 
+import Header from "./components/header/Header";
 
-function App(props) {
+function App() {
   return (
-    <div className="App">             
-     <HeaderButton text = "Signin" primary />
-     <HeaderButton text = "Register" />
-     <HeaderButton text = "ASAP" primary />
+    <div>
+      <Header />
     </div>
   );
 }
