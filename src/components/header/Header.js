@@ -2,49 +2,55 @@ import styled from "styled-components";
 import Wrapper from "./Wrapper";
 import Logo from "../common/Logo";
 import Button from "./Button";
-import Location from "./Location";
-import Text from "./TextTo";
-import ImageBasket from "./ImageBasket";
+import LocationInput from "./LocationInput";
+import Text from "../common/Text";
+import Basket from "./Basket";
 
 const StyledHeader = styled.header`
-    background: #ffffff;
-    box-shadow: 0px 0px 16px rgb(38 38 38 / 16%);
-    opacity: 1;
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 0px;
+  background: #ffffff;
+  box-shadow: 0px 0px 16px rgb(38 38 38 / 16%);
+  opacity: 1;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
 `;
 
 function Header(props) {
- return (
-     <StyledHeader>
+  return (
+    <StyledHeader>
       <div className="container">
-       <div className="row">
-        <div className="col-xs-5 col-md-2 col-lg-2">
-          <Wrapper>
-           <Logo />
-          </Wrapper>     
-        </div>
-        <div className="col-xs-1 col-md-5 col-lg-5 col-lg-offset-1">
+        <div className="row">
+          <div className="col-xs-5 col-md-2 col-lg-2">
             <Wrapper>
-                <Button text = "ASAP" primary />
-                <Text text = "to"/>
-                <Location text = "ul. Bolshaya  Dmitrovka,22" />
+              <Logo />
             </Wrapper>
-            </div>
-        <div className="col-xs-6 col-md-4 col-lg-3 col-md-offset-1">
+          </div>
+          <div className="col-xs-1 col-md-5 col-lg-5 col-lg-offset-1">
             <Wrapper>
-               <Button text = "Sign in" primary />
-               <Button text = "Register" />
-               <ImageBasket />
+              <Button ASAP primary>
+                ASAP
+              </Button>
+              <Text variant="gray" elementTo>
+                to
+              </Text>
+              <LocationInput
+                type="text"
+                placeholder="Find some place here..."
+              />
             </Wrapper>
+          </div>
+          <div className="col-xs-6 col-md-4 col-lg-3 col-md-offset-1">
+            <Wrapper>
+              <Button primary>Sign in</Button>
+              <Button>Register</Button>
+              <Basket />
+            </Wrapper>
+          </div>
         </div>
-        
-       </div>    
       </div>
-     </StyledHeader>
- )
+    </StyledHeader>
+  );
 }
 
 export default Header;

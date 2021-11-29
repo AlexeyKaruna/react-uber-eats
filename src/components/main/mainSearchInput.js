@@ -1,0 +1,15 @@
+import styled from "styled-components";
+
+import logoMainSearchInput from "../icons/Shape.svg";
+
+const MainSearchInput = styled.input`
+  width: 100%;
+  height: 48px;
+  margin-top: 32px;
+  background: url(${logoMainSearchInput}) no-repeat center left 1.2px;
+  padding-left: 30px;
+  border: none;
+  border-bottom: 1px solid #757575;
+`;
+
+export default MainSearchInput;
