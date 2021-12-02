@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Wrapper from "./Wrapper";
 import Logo from "../common/Logo";
-import Button from "./Button";
+import { Button, SignInButton, ASAPButton } from "./Button";
 import LocationInput from "./LocationInput";
 import Text from "../common/Text";
 import Basket from "./Basket";
@@ -28,9 +28,7 @@ function Header(props) {
           </div>
           <div className="col-xs-1 col-md-5 col-lg-5 col-lg-offset-1">
             <Wrapper>
-              <Button ASAP primary>
-                ASAP
-              </Button>
+              <ASAPButton primary>ASAP</ASAPButton>
               <Text variant="gray" elementTo>
                 to
               </Text>
@@ -42,7 +40,7 @@ function Header(props) {
           </div>
           <div className="col-xs-6 col-md-4 col-lg-3 col-md-offset-1">
             <Wrapper>
-              <Button primary>Sign in</Button>
+              <SignInButton primary>Sign in</SignInButton>
               <Button>Register</Button>
               <Basket />
             </Wrapper>
