@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../common/device";
+import { device } from "./device";
 
 const Button = styled.button`
   border: 1px solid ${(props) => (props.primary ? "#e0e0e0" : "#262626")};
@@ -32,5 +32,13 @@ const SignInButton = styled(Button)`
     margin-left: none;
   }
 `;
+const MobileButton = styled(Button)`
+  display: block;
+  background-color: #f2f2f2;
+  width: 100%;
+  @media ${device.xs} {
+    display: none;
+  }
+`;
 
-export { Button, ASAPButton, SignInButton };
+export { Button, ASAPButton, SignInButton, MobileButton };

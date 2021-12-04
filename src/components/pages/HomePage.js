@@ -4,7 +4,7 @@ import Main from "../main/Main";
 function HomePage() {
   return (
     <>
-      <Header />;
+      <Header />
       <Main />
     </>
   );

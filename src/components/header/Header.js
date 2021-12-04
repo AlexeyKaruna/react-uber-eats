@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Wrapper from "./Wrapper";
 import Logo from "../common/Logo";
-import { Button, SignInButton, ASAPButton } from "./Button";
+import { Button, SignInButton, ASAPButton } from "../common/Button";
 import LocationInput from "./LocationInput";
-import Text from "../common/Text";
+import { TextTo } from "../common/Text";
 import Basket from "./Basket";
 
 const StyledHeader = styled.header`
@@ -29,9 +29,7 @@ function Header(props) {
           <div className="col-xs-1 col-md-5 col-lg-5 col-lg-offset-1">
             <Wrapper>
               <ASAPButton primary>ASAP</ASAPButton>
-              <Text variant="gray" elementTo>
-                to
-              </Text>
+              <TextTo variant="gray">to</TextTo>
               <LocationInput
                 type="text"
                 placeholder="Find some place here..."
