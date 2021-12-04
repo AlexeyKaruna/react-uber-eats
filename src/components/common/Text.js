@@ -45,4 +45,27 @@ const RestText = styled(Text)`
     margin-bottom: 16px;
   }
 `;
-export { Text, TextTo, RestText, MobileSearchText };
+const FoodCardTextRestName = styled.div`
+  font-family: Roboto;
+  color: ${(props) => getColor(props.variant)};
+  font-size: ${(props) => (props.size ? `${props.size}px` : "14px")};
+  line-height: 24px;
+  margin-bottom: 4px;
+  font-weight: normal;
+  font-style: normal;
+`;
+const FoodCardTextType = styled(FoodCardTextRestName)`
+  line-height: 21px;
+`;
+const FoodCardTextTime = styled(FoodCardTextType)`
+  margin-bottom: 0;
+`;
+export {
+  Text,
+  TextTo,
+  RestText,
+  MobileSearchText,
+  FoodCardTextRestName,
+  FoodCardTextType,
+  FoodCardTextTime,
+};
