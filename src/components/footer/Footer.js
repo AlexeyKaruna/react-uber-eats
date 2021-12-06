@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "./Logo";
+import Social from "./Social";
 
 import { StripUpper, StripMiddle, StripBottom } from "./Strip";
 import SelectLanguage from "./SelectLanguage";
@@ -20,6 +21,7 @@ function Footer(props) {
           </div>
           <div className="col-xs-7 col-md-3 col-lg-3">
             <SelectLanguage></SelectLanguage>
+<Social />
           </div>
         </div>
       </div>
