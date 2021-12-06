@@ -17,9 +17,8 @@ const StyledSelectLanguage = styled.select`
 function SelectLanguage() {
   return (
     <Container>
-      <StyledSelectLanguage>
-        <SelectLogo />
-      </StyledSelectLanguage>
+      <SelectLogo />
+      <StyledSelectLanguage></StyledSelectLanguage>
     </Container>
   );
 }

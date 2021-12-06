@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import { device } from "../common/device";
-const FooterStrip = styled.div`
+const Strip = styled.div`
   height: 1px;
   background-color: #ffffff;
   opacity: 0.4;
 `;
 
-const FooterStripUpper = styled(FooterStrip)`
+const StripUpper = styled(Strip)`
   margin-bottom: 32px;
 `;
 
-const FooterStripMiddle = styled(FooterStrip)`
+const StripMiddle = styled(Strip)`
   margin-bottom: 24px;
 
   @media ${device.xs} {
@@ -18,11 +18,11 @@ const FooterStripMiddle = styled(FooterStrip)`
   }
 `;
 
-const FooterStripBottom = styled(FooterStrip)`
+const StripBottom = styled(Strip)`
   margin-top: 24px;
   @media ${device.xs} {
     margin-top: 40px;
   }
 `;
 
-export { FooterStrip, FooterStripUpper, FooterStripMiddle, FooterStripBottom };
+export { Strip, StripUpper, StripMiddle, StripBottom };

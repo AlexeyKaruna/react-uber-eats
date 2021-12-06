@@ -8,7 +8,6 @@ function getColor(variant) {
 }
 
 const Text = styled.span`
-  font-family: Roboto;
   color: ${(props) => getColor(props.variant)};
   font-style: normal;
   font-weight: 300;
@@ -46,7 +45,6 @@ const RestText = styled(Text)`
   }
 `;
 const FoodCardTextRestName = styled.div`
-  font-family: Roboto;
   color: ${(props) => getColor(props.variant)};
   font-size: ${(props) => (props.size ? `${props.size}px` : "14px")};
   line-height: 24px;
@@ -60,6 +58,18 @@ const FoodCardTextType = styled(FoodCardTextRestName)`
 const FoodCardTextTime = styled(FoodCardTextType)`
   margin-bottom: 0;
 `;
+
+const FooterTextSocial = styled.span`
+  color: #ffffff;
+  font-size: 16px;
+`;
+
+const FooterHashtagSocial = styled(FooterTextSocial)`
+  color: #49a144;
+  line-height: 19px;
+  padding-right: 1px;
+`;
+
 export {
   Text,
   TextTo,
@@ -68,4 +78,6 @@ export {
   FoodCardTextRestName,
   FoodCardTextType,
   FoodCardTextTime,
+  FooterTextSocial,
+  FooterHashtagSocial,
 };
