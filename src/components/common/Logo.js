@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LogoImg from "./logo.svg";
+import LogoImg from "../icons/HeaderLogo.svg";
 import { device } from "./device";
 
 const Logo = styled.img.attrs({

@@ -1,16 +1,17 @@
 import styled from "styled-components";
-import { device } from "../common/device";
+import { device } from "./device";
 
 function getColor(variant) {
   if (variant === "gray") return "#626262";
   if (variant === "light") return "#ffffff";
+  if (variant === "green") return "#49a144";
   return "#1d1d1d";
 }
 
 const Text = styled.span`
   color: ${(props) => getColor(props.variant)};
   font-style: normal;
-  font-weight: 300;
+  font-weight: normal;
   font-size: ${(props) => (props.size ? `${props.size}px` : "14px")};
   line-height: 19px;
 `;
@@ -59,16 +60,106 @@ const FoodCardTextTime = styled(FoodCardTextType)`
   margin-bottom: 0;
 `;
 
-const FooterTextSocial = styled.span`
-  color: #ffffff;
-  font-size: 16px;
-`;
-
-const FooterHashtagSocial = styled(FooterTextSocial)`
-  color: #49a144;
-  line-height: 19px;
+const FooterHashtagSocial = styled(Text)`
   padding-right: 1px;
 `;
+const StyledFooterText = styled.div`
+  color: ${(props) => getColor(props.variant)};
+  font-size: ${(props) => (props.size ? `${props.size}px` : "14px")};
+  line-height: 15px;
+  margin-bottom: 23px;
+  display: block;
+`;
+const StyledFooterTextFAQs = styled(StyledFooterText)`
+  margin-bottom: 40px;
+  @media ${device.xs} {
+    margin-bottom: 0;
+  }
+`;
+const StyledFooterTextCopyright = styled(StyledFooterText)`
+  line-height: 13px;
+  margin-bottom: 24px;
+  @media ${device.xs} {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+`;
+const StyledFooterTextCopyrightInc = styled(StyledFooterTextCopyright)`
+  margin-top: 40px;
+  margin-bottom: 24px;
+  @media ${device.xs} {
+    margin-bottom: 40px;
+  }
+`;
+const StyledFooterTextCopyrightTerms = styled(StyledFooterTextCopyright)`
+  margin-bottom: 40px;
+`;
+
+function LinkTextAboutCompany(props) {
+  return (
+    <a href={props.href}>
+      <StyledFooterText size={13} variant="light">
+        About UberEats
+      </StyledFooterText>
+      <StyledFooterText size={13} variant="light">
+        Become a Delivery Partner
+      </StyledFooterText>
+      <StyledFooterText size={13} variant="light">
+        Become a Restaurant Partner
+      </StyledFooterText>
+    </a>
+  );
+}
+
+function LinkTextPolicyCompany(props) {
+  return (
+    <a href={props.href}>
+      <StyledFooterText size={13} variant="light">
+        See all cities
+      </StyledFooterText>
+      <StyledFooterText size={13} variant="light">
+        Pricing{" "}
+      </StyledFooterText>
+      <StyledFooterText size={13} variant="light">
+        Help
+      </StyledFooterText>
+    </a>
+  );
+}
+
+function LinkTextFAQs(props) {
+  return (
+    <a href={props.href}>
+      <StyledFooterTextFAQs />
+    </a>
+  );
+}
+
+function LinkTextCopyrightInc() {
+  return (
+    <StyledFooterTextCopyrightInc size={11} variant="light">
+      © 2017 Uber Technologies Inc.
+    </StyledFooterTextCopyrightInc>
+  );
+}
+function LinkTextCopyright(props) {
+  return (
+    <a href={props.href}>
+      <StyledFooterTextCopyright size={11} variant="light">
+        Privacy
+      </StyledFooterTextCopyright>
+    </a>
+  );
+}
+function LinkTextCopyrightTerms(props) {
+  return (
+    <a href={props.href}>
+      <StyledFooterTextCopyrightTerms size={11} variant="light">
+        Terms
+      </StyledFooterTextCopyrightTerms>
+    </a>
+  );
+}
 
 export {
   Text,
@@ -78,6 +169,11 @@ export {
   FoodCardTextRestName,
   FoodCardTextType,
   FoodCardTextTime,
-  FooterTextSocial,
   FooterHashtagSocial,
+  LinkTextAboutCompany,
+  LinkTextPolicyCompany,
+  LinkTextFAQs,
+  LinkTextCopyrightInc,
+  LinkTextCopyright,
+  LinkTextCopyrightTerms,
 };

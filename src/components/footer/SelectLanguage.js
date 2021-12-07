@@ -1,5 +1,14 @@
 import styled from "styled-components";
-import SelectLogo from "./SelectLanguageImg";
+import SelectLanguageImg from "../icons/world.svg";
+
+const SelectLogo = styled.img.attrs({
+  src: SelectLanguageImg,
+})`
+  width: 16px;
+  position: absolute;
+  left: 16px;
+  bottom: 12.4px;
+`;
 const Container = styled.div`
   position: relative;
   margin-bottom: 33px;
@@ -18,7 +27,7 @@ function SelectLanguage() {
   return (
     <Container>
       <SelectLogo />
-      <StyledSelectLanguage></StyledSelectLanguage>
+      <StyledSelectLanguage />
     </Container>
   );
 }
