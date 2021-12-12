@@ -1,17 +1,11 @@
 import styled from "styled-components";
-import { Facebook, Instagram, Twitter } from "./Social";
-import { FooterHashtagSocial, Text } from "../common/Text";
+import { Text } from "../common/Text";
 import LogoImg from "../icons/FooterLogo.svg";
 import { StripUpper, StripMiddle, StripBottom } from "./Strip";
 import SelectLanguage from "./SelectLanguage";
-import {
-  LinkTextAboutCompany,
-  LinkTextPolicyCompany,
-  LinkTextFAQs,
-  LinkTextCopyright,
-  LinkTextCopyrightInc,
-  LinkTextCopyrightTerms,
-} from "../common/Text";
+import FacebookImg from "../icons/facebook.svg";
+import TwitterImg from "../icons/twitter.svg";
+import InstagramImg from "../icons/instagram.svg";
 import { MobileStoresContainer, Appstore, Googleplay } from "./MobileStores";
 
 const Logo = styled.img.attrs({
@@ -22,6 +16,24 @@ const Logo = styled.img.attrs({
 `;
 const StyledFooter = styled.footer`
   background-color: #262626;
+  padding-bottom: 40px;
+`;
+
+const FooterLinkContainer = styled.div`
+  margin-bottom: 23px;
+  &:last-child {
+    margin: 0;
+  }
+`;
+
+const SocialContainer = styled.div`
+  padding-top: 16px;
+  > a {
+    padding-right: 7px;
+  }
+  > a:last-child {
+    padding: 0;
+  }
 `;
 
 function Footer(props) {
@@ -37,26 +49,77 @@ function Footer(props) {
           </div>
           <div className="col-xs-7 col-md-3 col-lg-3">
             <SelectLanguage />
-            <FooterHashtagSocial size={16} variant="green">
-              #
-            </FooterHashtagSocial>
+            <Text size={16} variant="green">
+              #{" "}
+            </Text>
             <Text size={16} variant="light">
               UberEats
             </Text>
-            <div>
-              <Facebook href="https://www.facebook.com/" />
-              <Twitter href="https://twitter.com/" />
-              <Instagram href="https://www.instagram.com/" />
-            </div>
+            <SocialContainer>
+              <a href="https://www.facebook.com/">
+                <img src={FacebookImg} />
+              </a>
+              <a href="https://www.twitter.com/">
+                <img src={TwitterImg} />
+              </a>
+              <a href="https://www.instagram.com/">
+                <img src={InstagramImg} />
+              </a>
+            </SocialContainer>
           </div>
 
           <div className="col-xs-12 col-md-3 col-md-offset-1">
-            <LinkTextAboutCompany href="#" />
+            <FooterLinkContainer>
+              <a href="#">
+                <Text variant="light" size={13} lineheight={15}>
+                  About UberEats
+                </Text>
+              </a>
+            </FooterLinkContainer>
+            <FooterLinkContainer>
+              <a href="#">
+                <Text variant="light" size={13} lineheight={15}>
+                  Become a Delivery Partner
+                </Text>
+              </a>
+            </FooterLinkContainer>
+            <FooterLinkContainer>
+              <a href="#">
+                <Text variant="light" size={13} lineheight={15}>
+                  Become a Restaurant Partner
+                </Text>
+              </a>
+            </FooterLinkContainer>
           </div>
           <div className="col-xs-12 col-md-2 col-md-offset-1">
-            <LinkTextPolicyCompany href="#" />
-
-            <LinkTextFAQs href="#" />
+            <FooterLinkContainer>
+              <a href="#">
+                <Text variant="light" size={13} lineheight={15}>
+                  See all cities
+                </Text>
+              </a>
+            </FooterLinkContainer>
+            <FooterLinkContainer>
+              <a href="#">
+                <Text variant="light" size={13} lineheight={15}>
+                  Pricing
+                </Text>
+              </a>
+            </FooterLinkContainer>
+            <FooterLinkContainer>
+              <a href="#">
+                <Text variant="light" size={13} lineheight={15}>
+                  Help
+                </Text>
+              </a>
+            </FooterLinkContainer>
+            <FooterLinkContainer>
+              <a href="#">
+                <Text variant="light" size={13} lineheight={15}>
+                  FAQs
+                </Text>
+              </a>
+            </FooterLinkContainer>
           </div>
           <div className="col-xs-12">
             <StripMiddle />
@@ -71,20 +134,29 @@ function Footer(props) {
             <StripBottom />
           </div>
           <div className="col-xs-12 col-md-3">
-            <LinkTextCopyrightInc size={11} variant="light">
-              {" "}
-              © 2017 Uber Technologies Inc.
-            </LinkTextCopyrightInc>
+            <FooterLinkContainer>
+              <Text variant="light" size={11} lineheight={13}>
+                © 2017 Uber Technologies Inc.
+              </Text>
+            </FooterLinkContainer>
           </div>
           <div className="col-xs-12 col-md-1 col-md-offset-1">
-            <LinkTextCopyright href="#" size={11} variant="light">
-              Privacy
-            </LinkTextCopyright>
+            <FooterLinkContainer>
+              <a href="#">
+                <Text variant="light" size={11} lineheight={13}>
+                  Privacy
+                </Text>
+              </a>
+            </FooterLinkContainer>
           </div>
           <div class="col-xs-12 col-md-1 col-md-offset-3">
-            <LinkTextCopyrightTerms href="#" size={11} variant="light">
-              Terms
-            </LinkTextCopyrightTerms>
+            <FooterLinkContainer>
+              <a href="#">
+                <Text variant="light" size={11} lineheight={13}>
+                  Terms
+                </Text>
+              </a>
+            </FooterLinkContainer>
           </div>
         </div>
       </div>

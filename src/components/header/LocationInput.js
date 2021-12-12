@@ -3,7 +3,6 @@ import LogoLocation from "../icons/Group.svg";
 import { device } from "../common/device";
 
 const LocationInput = styled.input`
-  font-family: Roboto;
   font-size: 13px;
   background: url(${LogoLocation}) no-repeat center left 12px;
   border: 1px solid #e0e0e0;

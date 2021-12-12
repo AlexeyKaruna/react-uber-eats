@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { device } from "../common/device";
-import { RestText } from "../common/Text";
+import { Text } from "../common/Text";
 import Search from "./Search";
 import FoodCard from "./FoodCard";
 import MacImg from "./images/McDonald's.png";
@@ -12,6 +12,7 @@ import CinnabonImg from "./images/Cinnabon.png";
 import PIZZELOVEImg from "./images/PIZZELOVE.png";
 import ZyuCafeImg from "./images/Zyu Cafe - Tverskaya street.png";
 import BarBQImg from "./images/Bar BQ Cafe.png";
+
 const StyledMain = styled.main`
   padding-top: 72px;
   background-color: #f2f2f2;
@@ -22,6 +23,17 @@ const StyledMain = styled.main`
   }
 `;
 
+const RestTextContainer = styled.div`
+  margin-top: 40px;
+  margin-bottom: 14px;
+  line-height: 34px;
+
+  @media ${device.xs} {
+    margin-top: 56px;
+    margin-bottom: 16px;
+  }
+`;
+
 function Main(props) {
   return (
     <StyledMain>
@@ -29,7 +41,11 @@ function Main(props) {
         <div className="row">
           <Search />
           <div className="col-xs-12 col-md-12 col-lg-12">
-            <RestText size={22}>Moscow Restaurants</RestText>
+            <RestTextContainer>
+              <Text size={22} lineheight={34}>
+                Moscow Restaurants
+              </Text>
+            </RestTextContainer>
           </div>
           <div className="col-xs-12 col-md-6 col-lg-4">
             <FoodCard

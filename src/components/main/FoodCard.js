@@ -1,14 +1,19 @@
 import styled from "styled-components";
-import {
-  FoodCardTextRestName,
-  FoodCardTextType,
-  FoodCardTextTime,
-} from "../common/Text";
+import { Text } from "../common/Text";
 
 const Container = styled.div`
   text-align: left;
   margin-top: 8px;
   margin-bottom: 8px;
+  > div:nth-child(2) {
+    padding-top: 0;
+  }
+  > div {
+    padding-top: 5px;
+  }
+  > div:last-child {
+    padding-top: 3px;
+  }
 `;
 const Image = styled.img`
   width: 100%;
@@ -20,9 +25,21 @@ function Foodcard(props) {
     <a href={props.href}>
       <Container>
         <Image src={props.img} />
-        <FoodCardTextRestName size={16}>{props.name}</FoodCardTextRestName>
-        <FoodCardTextType variant="gray">{props.type}</FoodCardTextType>
-        <FoodCardTextTime size={13}>{props.time}</FoodCardTextTime>
+        <div>
+          <Text size={16} lineheight={24}>
+            {props.name}
+          </Text>
+        </div>
+        <div>
+          <Text variant="gray" lineheight={21}>
+            {props.type}
+          </Text>
+        </div>
+        <div>
+          <Text size={13} lineheight={21}>
+            {props.time}
+          </Text>
+        </div>
       </Container>
     </a>
   );

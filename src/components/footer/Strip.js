@@ -12,6 +12,7 @@ const StripUpper = styled(Strip)`
 
 const StripMiddle = styled(Strip)`
   margin-bottom: 24px;
+  margin-top: 40px;
 
   @media ${device.xs} {
     margin-bottom: 40px;
@@ -20,6 +21,7 @@ const StripMiddle = styled(Strip)`
 
 const StripBottom = styled(Strip)`
   margin-top: 24px;
+  margin-bottom: 40px;
   @media ${device.xs} {
     margin-top: 40px;
   }
