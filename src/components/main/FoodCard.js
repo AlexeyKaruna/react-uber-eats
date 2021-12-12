@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Text } from "../common/Text";
+import { device } from "../common/device";
 
 const Container = styled.div`
   text-align: left;
@@ -13,6 +14,17 @@ const Container = styled.div`
   }
   > div:last-child {
     padding-top: 3px;
+  }
+  @media ${device.lg} {
+    > div {
+      padding-top: 4px;
+    }
+    > div:last-child {
+      padding-top: 4px;
+    }
+  }
+  &:hover {
+    background-color: #d4cfcf;
   }
 `;
 const Image = styled.img`
