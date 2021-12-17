@@ -3,7 +3,7 @@ import Wrapper from "./Wrapper";
 import Logo from "../common/Logo";
 import { Button, SignInButton, ASAPButton } from "../common/Button";
 import LocationInput from "./LocationInput";
-import { Text } from "../common/Text";
+import Text from "../common/Text";
 import Basket from "./Basket";
 import { device } from "../common/device";
 

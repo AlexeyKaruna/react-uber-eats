@@ -16,4 +16,4 @@ const Text = styled.span`
     props.lineheight ? `${props.lineheight}px` : "19px"};
 `;
 
-export { Text };
+export default Text;

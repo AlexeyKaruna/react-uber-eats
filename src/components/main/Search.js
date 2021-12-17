@@ -2,7 +2,7 @@ import styled from "styled-components";
 import MainSearchInput from "./MainSearchInput";
 import MobileLocationInput from "./MobileLocationInput";
 import { MobileButton } from "../common/Button";
-import { Text } from "../common/Text";
+import Text from "../common/Text";
 import { device } from "../common/device";
 
 const MobileSearchTextContainer = styled.div`

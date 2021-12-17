@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Text } from "../common/Text";
+import Text from "../common/Text";
 import LogoImg from "../icons/FooterLogo.svg";
 import { StripUpper, StripMiddle, StripBottom } from "./Strip";
 import SelectLanguage from "./SelectLanguage";
