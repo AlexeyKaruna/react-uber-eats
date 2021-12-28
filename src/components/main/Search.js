@@ -14,11 +14,17 @@ const MobileSearchTextContainer = styled.div`
 `;
 
 function Search(props) {
+  function handleChange(event) {
+    props.setSearchText(event.target.value);
+  }
   return (
     <div className="container">
       <div className="row">
         <div className="col-xs-12 col-md-12 col-lg-12">
-          <MainSearchInput placeholder="Search for reastaurant or cuisine" />
+          <MainSearchInput
+            placeholder="Search for reastaurant or cuisine"
+            onChange={handleChange}
+          />
         </div>
         <div className="col-xs-2">
           <MobileSearchTextContainer>

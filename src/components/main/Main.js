@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import React, { useState, useEffect } from "react";
 import { device } from "../common/device";
 import Text from "../common/Text";
 import Search from "./Search";
 import FoodCard from "./FoodCard";
-import data from "./restDATA";
 
 const StyledMain = styled.main`
   padding-top: 72px;
@@ -27,11 +27,20 @@ const RestTextContainer = styled.div`
 `;
 
 function Main(props) {
+  const [data, setData] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    fetch("https://api.turborouter.keenetic.pro/api/restaurants/")
+      .then((res) => res.json())
+      .then(setData);
+  }, []);
+
   return (
     <StyledMain>
       <div className="container">
         <div className="row">
-          <Search />
+          <Search searchText={searchText} setSearchText={setSearchText} />
           <div className="col-xs-12 col-md-12 col-lg-12">
             <RestTextContainer>
               <Text size={22} lineheight={34}>
@@ -39,19 +48,23 @@ function Main(props) {
               </Text>
             </RestTextContainer>
           </div>
-          {data.map(function (rest) {
-            return (
-              <div className="col-xs-12 col-md-6 col-lg-4">
-                <FoodCard
-                  img={rest.image}
-                  name={rest.name}
-                  type={rest.type}
-                  time={rest.time}
-                  href={rest.href}
-                ></FoodCard>
-              </div>
-            );
-          })}
+          {data
+            .filter((rest) =>
+              rest.name.toLowerCase().includes(searchText.toLowerCase())
+            )
+            .map(function (rest) {
+              return (
+                <div className="col-xs-12 col-md-6 col-lg-4">
+                  <FoodCard
+                    img={rest.image}
+                    name={rest.name}
+                    type={rest.type}
+                    time={rest.time}
+                    href={rest.href}
+                  ></FoodCard>
+                </div>
+              );
+            })}
         </div>
       </div>
     </StyledMain>
