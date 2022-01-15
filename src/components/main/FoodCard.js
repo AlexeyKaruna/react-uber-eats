@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import Text from "../common/Text";
 import { device } from "../common/device";
 
@@ -34,7 +36,7 @@ const Image = styled.img`
 
 function Foodcard(props) {
   return (
-    <a href={props.href}>
+    <Link to="/restaurant">
       <Container>
         <Image src={props.img} />
         <div>
@@ -53,7 +55,7 @@ function Foodcard(props) {
           </Text>
         </div>
       </Container>
-    </a>
+    </Link>
   );
 }
 export default Foodcard;

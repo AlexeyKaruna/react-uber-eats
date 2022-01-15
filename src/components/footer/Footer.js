@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import Text from "../common/Text";
 import LogoImg from "../icons/FooterLogo.svg";
 import { StripUpper, StripMiddle, StripBottom } from "./Strip";
@@ -42,7 +43,9 @@ function Footer(props) {
       <div className="container">
         <div className="row">
           <div className="col-xs-8 col-md-4 col-lg-3">
-            <Logo />
+            <Link to="/">
+              <Logo />
+            </Link>
           </div>
           <div className="col-xs-12">
             <StripUpper />

@@ -60,7 +60,7 @@ function Main(props) {
                     name={rest.name}
                     type={rest.type}
                     time={rest.time}
-                    href={rest.href}
+                    URL={rest.URL}
                   ></FoodCard>
                 </div>
               );

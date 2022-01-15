@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import LogoImg from "../icons/HeaderLogo.svg";
 import { device } from "./device";
 
-const Logo = styled.img.attrs({
+const StyledLogo = styled.img.attrs({
   src: LogoImg,
 })`
   height: 11px;
@@ -10,5 +12,13 @@ const Logo = styled.img.attrs({
     height: 13px;
   }
 `;
+
+function Logo() {
+  return (
+    <Link to="/">
+      <StyledLogo></StyledLogo>
+    </Link>
+  );
+}
 
 export default Logo;
