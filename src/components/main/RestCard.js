@@ -34,7 +34,7 @@ const Image = styled.img`
   margin-bottom: 16px;
 `;
 
-function Foodcard(props) {
+function RestCard(props) {
   return (
     <Link to="/restaurant">
       <Container>
@@ -58,4 +58,4 @@ function Foodcard(props) {
     </Link>
   );
 }
-export default Foodcard;
+export default RestCard;

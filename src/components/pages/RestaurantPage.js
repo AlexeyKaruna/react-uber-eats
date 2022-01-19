@@ -3,26 +3,39 @@ import { device } from "../common/device";
 
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import RestMainCard from "../main/RestMainCard";
-import { dataRestMainCard, dataMenuList } from "../main/restDATA";
+import RestMainCard from "../main/mainrestaurantpage/RestNameCard";
+import {
+  dataRestMainCard,
+  dataMenuList,
+  dataMenuHeader,
+  dataFoodCardWithComposition,
+  dataFoodCardDefault,
+} from "../main/restDATA";
 import ImgBackgroundLg from "../main/images/restimagebackground.png";
 import ImgBackgroundMd from "../main/images/restimagebackgroundtablet.png";
 import ImgBackgroundXs from "../main/images/restimagebackgroundmobile.png";
 import Text from "../common/Text";
+import {
+  FoodCardWithComposition,
+  FoodCardDefault,
+} from "../main/mainrestaurantpage/FoodCard";
 
 const StyledMainRestaurantPage = styled.div`
   margin-top: 72px;
   background: url(${ImgBackgroundXs}) no-repeat center top 0px;
   margin-bottom: 40px;
-
+  > div div:nth-child(9) div {
+    margin-bottom: 0px;
+  }
   @media ${device.md} {
     margin-bottom: 48px;
     background: url(${ImgBackgroundMd}) no-repeat center top 0px;
-    background-color: #f2f2f2;
   }
   @media ${device.lg} {
     margin-bottom: 80px;
     background: url(${ImgBackgroundLg}) no-repeat center top 0px;
+    > div div:nth-child(8) div {
+      margin-bottom: 0px;
   }
 `;
 
@@ -31,17 +44,41 @@ const MenuListContainer = styled.div`
   border-bottom: 1px solid rgba(117, 117, 117, 0.2);
   padding-top: 32px;
   padding-bottom: 29px;
-  display: flex;
-  justify-content: start;
-  &:last-child {
-    margin-right: 0;
+  display: none;
+  @media ${device.md} {
+    display: flex;
+    justify-content: start;
   }
-  > a span {
+  > div {
     margin-right: 40px;
   }
-
-  > a span:hover {
+  > div:last-child {
+    margin-right: 0;
+  }
+  > div a span:hover {
     color: #327430;
+  }
+`;
+
+const MenuHeader = styled.div`
+  margin-top: 56px;
+  margin-bottom: 43px;
+  display: flex;
+  justify-content: center;
+  > div a span:hover {
+    color: #327430;
+  }
+  > div {
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(117, 117, 117, 0.2);
+  }
+  @media ${device.md} {
+    margin-bottom: 32px;
+    justify-content: start;
+    > div {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
 `;
 
@@ -63,47 +100,97 @@ function RestaurantPage(props) {
                 </div>
               );
             })}
+
+            {dataMenuList.map(function (menuHeadline) {
+              return (
+                <div className="col-xs-12">
+                  <MenuListContainer>
+                    <div>
+                      <a href="#">
+                        <Text size={16} lineheight={19} variant="gray">
+                          {menuHeadline.name1}
+                        </Text>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="#">
+                        <Text size={16} lineheight={19} variant="gray">
+                          {menuHeadline.name2}
+                        </Text>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="#">
+                        <Text size={16} lineheight={19} variant="gray">
+                          {menuHeadline.name3}
+                        </Text>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="#">
+                        <Text size={16} lineheight={19} variant="gray">
+                          {menuHeadline.name4}
+                        </Text>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="#">
+                        <Text size={16} lineheight={19} variant="gray">
+                          {menuHeadline.name5}
+                        </Text>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="#">
+                        <Text size={16} lineheight={19} variant="gray">
+                          {menuHeadline.name6}
+                        </Text>
+                      </a>
+                    </div>
+                  </MenuListContainer>
+                </div>
+              );
+            })}
+            {dataMenuHeader.map(function (menuHeaderName) {
+              return (
+                <div className="col-xs-12">
+                  <MenuHeader>
+                    <div>
+                      <a href="#">
+                        <Text size={22} lineheight={34}>
+                          {menuHeaderName.name}
+                        </Text>
+                      </a>
+                    </div>
+                  </MenuHeader>
+                </div>
+              );
+            })}
+            {dataFoodCardWithComposition.map(function (card) {
+              return (
+                <div className="col-xs-12 col-lg-6">
+                  <FoodCardWithComposition
+                    name={card.foodname}
+                    foodcomposition={card.foodcomposition}
+                    price={card.price}
+                    image={card.image}
+                  ></FoodCardWithComposition>
+                </div>
+              );
+            })}
+            {dataFoodCardDefault.map(function (card) {
+              return (
+                <div className="col-xs-12 col-lg-6">
+                  <FoodCardDefault
+                    name={card.foodname}
+                    price={card.price}
+                    image={card.image}
+                  ></FoodCardDefault>
+                </div>
+              );
+            })}
           </div>
         </div>
-
-        {dataMenuList.map(function (menuHeadline) {
-          return (
-            <div className="col-xs-12">
-              <MenuListContainer>
-                <a href="#">
-                  <Text size={16} lineheight={19} variant="gray">
-                    {menuHeadline.name1}
-                  </Text>
-                </a>
-                <a href="#">
-                  <Text size={16} lineheight={19} variant="gray">
-                    {menuHeadline.name2}
-                  </Text>
-                </a>
-                <a href="#">
-                  <Text size={16} lineheight={19} variant="gray">
-                    {menuHeadline.name3}
-                  </Text>
-                </a>
-                <a href="#">
-                  <Text size={16} lineheight={19} variant="gray">
-                    {menuHeadline.name4}
-                  </Text>
-                </a>
-                <a href="#">
-                  <Text size={16} lineheight={19} variant="gray">
-                    {menuHeadline.name5}
-                  </Text>
-                </a>
-                <a href="#">
-                  <Text size={16} lineheight={19} variant="gray">
-                    {menuHeadline.name6}
-                  </Text>
-                </a>
-              </MenuListContainer>
-            </div>
-          );
-        })}
       </StyledMainRestaurantPage>
       <Footer />
     </>

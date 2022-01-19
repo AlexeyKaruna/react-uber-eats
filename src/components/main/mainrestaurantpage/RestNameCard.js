@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Text from "../common/Text";
-import { device } from "../common/device";
+import Text from "../../common/Text";
+import { device } from "../../common/device";
 
 const StyledRestNameCard = styled.div`
   display: none;
@@ -60,7 +60,7 @@ const StyledRestNameCardMobile = styled(StyledRestNameCard)`
   }
 `;
 
-function RestMainCard(props) {
+function RestNameCard(props) {
   return (
     <>
       <StyledRestNameCard>
@@ -100,4 +100,4 @@ function RestMainCard(props) {
   );
 }
 
-export default RestMainCard;
+export default RestNameCard;

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { device } from "../common/device";
 import Text from "../common/Text";
 import Search from "./Search";
-import FoodCard from "./FoodCard";
+import RestCard from "./RestCard";
 
 const StyledMain = styled.main`
   padding-top: 72px;
@@ -55,13 +55,13 @@ function Main(props) {
             .map(function (rest) {
               return (
                 <div className="col-xs-12 col-md-6 col-lg-4">
-                  <FoodCard
+                  <RestCard
                     img={rest.image}
                     name={rest.name}
                     type={rest.type}
                     time={rest.time}
                     URL={rest.URL}
-                  ></FoodCard>
+                  ></RestCard>
                 </div>
               );
             })}

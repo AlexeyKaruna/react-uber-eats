@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../common/device";
 import { Link } from "react-router-dom";
 import Text from "../common/Text";
 import LogoImg from "../icons/FooterLogo.svg";
@@ -18,6 +19,34 @@ const Logo = styled.img.attrs({
 const StyledFooter = styled.footer`
   background-color: #262626;
   padding-bottom: 40px;
+
+  > div div:nth-child(4) div:last-child {
+    margin-bottom: 23px;
+  }
+  > div div:nth-child(3) div:last-child {
+    margin-bottom: 43px;
+  }
+  > div div:nth-child(9) div {
+    margin-bottom: 24px;
+  }
+  > div div:nth-child(10) div {
+    margin-bottom: 24px;
+  }
+
+  @media ${device.md} {
+    > div div:nth-child(4) div:last-child {
+      margin-bottom: 0;
+    }
+    > div div:nth-child(3) div:last-child {
+      margin-bottom: 0;
+    }
+    > div div:nth-child(9) div {
+      margin-bottom: 0;
+    }
+    > div div:nth-child(10) div {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 const FooterLinkContainer = styled.div`
