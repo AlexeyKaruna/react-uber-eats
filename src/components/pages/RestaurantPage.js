@@ -1,32 +1,30 @@
 import styled from "styled-components";
 import { device } from "../common/device";
+import { useState } from "react";
 
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import RestMainCard from "../main/mainrestaurantpage/RestNameCard";
 import {
   dataRestMainCard,
-  dataMenuList,
   dataMenuHeader,
-  dataFoodCardWithComposition,
-  dataFoodCardDefault,
+  menuTypes,
+  rest,
 } from "../main/restDATA";
 import ImgBackgroundLg from "../main/images/restimagebackground.png";
 import ImgBackgroundMd from "../main/images/restimagebackgroundtablet.png";
 import ImgBackgroundXs from "../main/images/restimagebackgroundmobile.png";
 import Text from "../common/Text";
-import {
-  FoodCardWithComposition,
-  FoodCardDefault,
-} from "../main/mainrestaurantpage/FoodCard";
+import FoodCard from "../main/mainrestaurantpage/FoodCard";
 
 const StyledMainRestaurantPage = styled.div`
   margin-top: 72px;
   background: url(${ImgBackgroundXs}) no-repeat center top 0px;
   margin-bottom: 40px;
-  > div div:nth-child(9) div {
+  > div div:last-child div {
     margin-bottom: 0px;
   }
+  
   @media ${device.md} {
     margin-bottom: 48px;
     background: url(${ImgBackgroundMd}) no-repeat center top 0px;
@@ -34,7 +32,7 @@ const StyledMainRestaurantPage = styled.div`
   @media ${device.lg} {
     margin-bottom: 80px;
     background: url(${ImgBackgroundLg}) no-repeat center top 0px;
-    > div div:nth-child(8) div {
+    > div div:nth-child(9) div {
       margin-bottom: 0px;
   }
 `;
@@ -83,6 +81,7 @@ const MenuHeader = styled.div`
 `;
 
 function RestaurantPage(props) {
+  const [currentMenuType, setcurrentMenuType] = useState(1);
   return (
     <>
       <Header />
@@ -101,56 +100,28 @@ function RestaurantPage(props) {
               );
             })}
 
-            {dataMenuList.map(function (menuHeadline) {
-              return (
-                <div className="col-xs-12">
-                  <MenuListContainer>
+            <div className="col-xs-12">
+              <MenuListContainer>
+                {menuTypes.map(function (menuHeadline) {
+                  return (
                     <div>
-                      <a href="#">
+                      <a
+                        href="#"
+                        onClick={() => {
+                          setcurrentMenuType(menuHeadline.id);
+                          console.log(currentMenuType);
+                        }}
+                      >
                         <Text size={16} lineheight={19} variant="gray">
-                          {menuHeadline.name1}
+                          {menuHeadline.type}
                         </Text>
                       </a>
                     </div>
-                    <div>
-                      <a href="#">
-                        <Text size={16} lineheight={19} variant="gray">
-                          {menuHeadline.name2}
-                        </Text>
-                      </a>
-                    </div>
-                    <div>
-                      <a href="#">
-                        <Text size={16} lineheight={19} variant="gray">
-                          {menuHeadline.name3}
-                        </Text>
-                      </a>
-                    </div>
-                    <div>
-                      <a href="#">
-                        <Text size={16} lineheight={19} variant="gray">
-                          {menuHeadline.name4}
-                        </Text>
-                      </a>
-                    </div>
-                    <div>
-                      <a href="#">
-                        <Text size={16} lineheight={19} variant="gray">
-                          {menuHeadline.name5}
-                        </Text>
-                      </a>
-                    </div>
-                    <div>
-                      <a href="#">
-                        <Text size={16} lineheight={19} variant="gray">
-                          {menuHeadline.name6}
-                        </Text>
-                      </a>
-                    </div>
-                  </MenuListContainer>
-                </div>
-              );
-            })}
+                  );
+                })}
+              </MenuListContainer>
+            </div>
+            <div>{currentMenuType}</div>
             {dataMenuHeader.map(function (menuHeaderName) {
               return (
                 <div className="col-xs-12">
@@ -166,26 +137,15 @@ function RestaurantPage(props) {
                 </div>
               );
             })}
-            {dataFoodCardWithComposition.map(function (card) {
+            {rest.menu.map(function (card) {
               return (
                 <div className="col-xs-12 col-lg-6">
-                  <FoodCardWithComposition
-                    name={card.foodname}
-                    foodcomposition={card.foodcomposition}
+                  <FoodCard
+                    name={card.name}
+                    description={card.description}
                     price={card.price}
                     image={card.image}
-                  ></FoodCardWithComposition>
-                </div>
-              );
-            })}
-            {dataFoodCardDefault.map(function (card) {
-              return (
-                <div className="col-xs-12 col-lg-6">
-                  <FoodCardDefault
-                    name={card.foodname}
-                    price={card.price}
-                    image={card.image}
-                  ></FoodCardDefault>
+                  ></FoodCard>
                 </div>
               );
             })}

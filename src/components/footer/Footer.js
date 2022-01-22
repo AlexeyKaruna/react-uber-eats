@@ -181,7 +181,7 @@ function Footer(props) {
               </a>
             </FooterLinkContainer>
           </div>
-          <div class="col-xs-12 col-md-1 col-md-offset-3">
+          <div className="col-xs-12 col-md-1 col-md-offset-3">
             <FooterLinkContainer>
               <a href="#">
                 <Text variant="light" size={11} lineheight={13}>
