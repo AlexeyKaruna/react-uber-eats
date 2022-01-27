@@ -56,6 +56,7 @@ function Main(props) {
               return (
                 <div className="col-xs-12 col-md-6 col-lg-4">
                   <RestCard
+                    key={rest.id}
                     img={rest.image}
                     name={rest.name}
                     type={rest.type}

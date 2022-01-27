@@ -55,7 +55,7 @@ const rest = {
       image: FoodCardImgXSnumber1,
     },
     {
-      type: 1,
+      type: 2,
       name: "Соленья вссорти",
       description: "",
       price: "320 ₽",
@@ -76,14 +76,14 @@ const rest = {
       image: FoodCardImgXSnumber4,
     },
     {
-      type: 1,
+      type: 5,
       name: "Малосольная семга",
       description: "",
       price: "390 ₽",
       image: FoodCardImgXSnumber5,
     },
     {
-      type: 1,
+      type: 5,
       name: "Язык говяжий с хреном",
       description: "",
       price: "350 ₽",
